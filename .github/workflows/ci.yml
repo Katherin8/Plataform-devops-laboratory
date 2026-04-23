@@ -1,10 +1,16 @@
 name: CI Pipeline Laboratory
 
 on:
-   pull_request
+   push:
+   pull_request:
 
 jobs:
-     runs-on: redis:latest
-     steps:
-           uses: actions/checkout@v4
-           run: make ci
+    build: Machine
+      runs-on: ubuntu-latest
+    
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+           
+        - name: Execute Image en Makefile
+          run: make ci
