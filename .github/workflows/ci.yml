@@ -5,13 +5,31 @@ on:
    pull_request:
 
 jobs:
-    build:
-      name: Machine
+    validate:
+      name: Validation
       runs-on: ubuntu-latest
     
       steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
            
-        - name: Execute Image en Makefile
+        - name: Validate Makefile
+          run: make hello
+    
+    docker:
+      name: Container
+      runs-on: ubuntu-lates
+      
+      steps:
+        - name: Checkout Repository
+	  uses: actions/checkout@v4
+
+	- name: First Dependen Validate
+	  needs: validate
           run: make ci
+
+
+
+
+
+
