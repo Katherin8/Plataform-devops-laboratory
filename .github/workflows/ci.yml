@@ -18,14 +18,14 @@ jobs:
     
     docker:
       name: Container
-      runs-on: ubuntu-lates
+      needs: validate
+      runs-on: ubuntu-latest
       
       steps:
         - name: Checkout Repository
 	  uses: actions/checkout@v4
 
-	- name: First Dependen Validate
-	  needs: validate
+	- name: Execute Makefile
           run: make ci
 
 
