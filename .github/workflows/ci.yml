@@ -23,9 +23,9 @@ jobs:
       
       steps:
         - name: Checkout Repository
-	  uses: actions/checkout@v4
+          uses: actions/checkout@v4
 
-	- name: Execute Makefile
+        - name: Execute Makefile
           run: make ci
 
 
