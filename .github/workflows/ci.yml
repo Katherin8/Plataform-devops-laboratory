@@ -32,6 +32,9 @@ jobs:
         - name: Execute Makefile Build
           run: make build
 
+        - name: Execute Tag to change name image
+          run: docker tag devops-laboratory ghcr.io/Katherin8/plataform-devops-laboratory:latest
+
         - name: Execute Makefile Run
           run: make build
 
