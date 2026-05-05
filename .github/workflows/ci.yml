@@ -39,7 +39,7 @@ jobs:
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
         - name: Execute Docker push in Registry
-          run: docker push ghcr.io/katherin8/plataform-devops-laboratory:latest
+          run: docker push ghcr.io/katherin8/plataform-devops-laboratory:${{ github.sha }}
 
 
 
